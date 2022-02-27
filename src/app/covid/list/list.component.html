@@ -1,0 +1,40 @@
+<div class="container">
+  <div *ngIf="data; else loading">
+    <div *ngFor="let item of data.results">
+      <div>
+        <h5>วันที่ต้องการดูข้อมูล :</h5>
+        {{ item.txn_date }}
+
+        <h5>อัพเดตล่าสุด :</h5>
+        {{ item.update_date }}
+      </div>
+
+      <div>
+        <b>จำนวนผู้ป่วยรายใหม่: </b>
+        <span>{{ item.new_case }}</span>
+      </div>
+
+      <div>
+        <div>
+          <b>จำนวนผู้ป่วยสะสม : </b>
+          <span>{{ item.total_case }}</span>
+        </div>
+      </div>
+      <div>
+        <div>
+          <b>จำนวนผู้ป่วยรักษาหายรายใหม่: </b>
+          <span>{{ item.new_death }}</span>
+        </div>
+      </div>
+
+      <div>
+        <b>จำนวนเสียชีวิต : </b>
+        <span>{{ item.total_death }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>
