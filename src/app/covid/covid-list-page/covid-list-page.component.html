@@ -3,7 +3,7 @@
   (change)="onProvinceChange($event)"
   class="custom-select custom-select-lg"
 >
-  <option value="">ทั้งหมด</option>
+  <option value="" class="">--- เลือกจังหวัด ---</option>
   <option *ngFor="let province of provinces" [value]="province">
     {{ province }}
   </option>
