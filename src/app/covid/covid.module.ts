@@ -13,9 +13,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { CovidListComponent } from './covid-list/covid-list.component';
+import { CovidListPageComponent } from './covid-list-page/covid-list-page.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
-  declarations: [],
+  declarations: [CovidListComponent, CovidListPageComponent],
   imports: [
     CommonModule,
     CovidRoutingModule,
@@ -29,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatNativeDateModule,
   ],
 })
 export class CovidModule {}

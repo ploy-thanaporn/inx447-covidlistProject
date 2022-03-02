@@ -5,11 +5,11 @@ import { Covid, List } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  selector: 'app-covid-list',
+  templateUrl: './covid-list.component.html',
+  styleUrls: ['./covid-list.component.scss'],
 })
-export class ListComponent implements OnInit {
+export class CovidListComponent implements OnInit {
   @Input() data: List<Covid> | null = null;
 
   constructor(

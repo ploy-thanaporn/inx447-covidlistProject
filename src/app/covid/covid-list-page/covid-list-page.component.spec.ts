@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListPageComponent } from './list-page.component';
+import { CovidListPageComponent } from './covid-list-page.component';
 
 describe('ListPageComponent', () => {
-  let component: ListPageComponent;
-  let fixture: ComponentFixture<ListPageComponent>;
+  let component: CovidListPageComponent;
+  let fixture: ComponentFixture<CovidListPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListPageComponent ]
-    })
-    .compileComponents();
+      declarations: [CovidListPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListPageComponent);
+    fixture = TestBed.createComponent(CovidListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

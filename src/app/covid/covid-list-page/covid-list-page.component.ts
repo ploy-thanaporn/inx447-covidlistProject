@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { filter, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Covid, List } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 import { provinces } from 'src/app/models/province';
 
 @Component({
-  selector: 'app-list-page',
-  templateUrl: './list-page.component.html',
-  styleUrls: ['./list-page.component.scss'],
+  selector: 'app-covid-list-page',
+  templateUrl: './covid-list-page.component.html',
+  styleUrls: ['./covid-list-page.component.scss'],
 })
-export class ListPageComponent implements OnInit {
+export class CovidListPageComponent implements OnInit {
   @Input() data: List<Covid> | null = null;
 
   selectedProvinceName!: String;

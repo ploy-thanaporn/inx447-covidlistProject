@@ -1,8 +1,0 @@
-<h3>รายงานสถานการณ์ โควิด-19</h3>
-<select (change)="onProvinceChange($event)" name="" id="">
-  <option value="">ทั้งหมด</option>
-  <option *ngFor="let province of provinces" [value]="province">
-    {{ province }}
-  </option>
-</select>
-<app-list [data]="data$ | async"></app-list>

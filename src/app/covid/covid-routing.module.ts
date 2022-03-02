@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListPageComponent } from './list-page/list-page.component';
-import { ListComponent } from './list/list.component';
+import { CovidListPageComponent } from './covid-list-page/covid-list-page.component';
 
-const routes: Routes = [{ path: 'list', component: ListPageComponent }];
+const routes: Routes = [{ path: 'list', component: CovidListPageComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
