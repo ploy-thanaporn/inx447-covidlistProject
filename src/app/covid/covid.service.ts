@@ -5,14 +5,18 @@ import {
   CovidDay,
   CovidProvince,
   List,
-  parseCovidDay,
+  parseTimeLineCasesAll,
+  parseCovidDayList,
   parseProvinceList,
+  CovidTimelineCasesAll,
 } from '../models/covid';
 
 const urlAllProvinces =
   'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
 
 const urlAllDay = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-all';
+
+const urlAll = 'https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +31,14 @@ export class CovidService {
   }
 
   getAllDay(): Observable<List<CovidDay>> {
-    return this.http.get(urlAllDay).pipe(map((data) => parseCovidDay(data)));
+    return this.http
+      .get(urlAllDay)
+      .pipe(map((data) => parseCovidDayList(data)));
+  }
+
+  timelineCasesAll(): Observable<CovidTimelineCasesAll> {
+    return this.http
+      .get(urlAll)
+      .pipe(map((data) => parseTimeLineCasesAll(data)));
   }
 }

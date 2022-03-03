@@ -17,9 +17,18 @@ import { CovidListComponent } from './covid-list/covid-list.component';
 import { CovidListPageComponent } from './covid-list-page/covid-list-page.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CovidDayComponent } from './covid-day/covid-day.component';
+import { CovidDayPageComponent } from './covid-day-page/covid-day-page.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { CovidLineChartComponent } from './covid-line-chart/covid-line-chart.component';
 
 @NgModule({
-  declarations: [CovidListComponent, CovidListPageComponent, CovidDayComponent],
+  declarations: [
+    CovidListComponent,
+    CovidListPageComponent,
+    CovidDayComponent,
+    CovidDayPageComponent,
+    CovidLineChartComponent,
+  ],
   imports: [
     CommonModule,
     CovidRoutingModule,
@@ -34,6 +43,7 @@ import { CovidDayComponent } from './covid-day/covid-day.component';
     MatCheckboxModule,
     MatButtonModule,
     MatNativeDateModule,
+    NgApexchartsModule,
   ],
 })
 export class CovidModule {}

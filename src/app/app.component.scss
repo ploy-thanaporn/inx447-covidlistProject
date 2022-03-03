@@ -1,34 +1,47 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+// :host {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100vh;
 
-  & > mat-toolbar {
-    height: 60px;
-  }
-}
-mat-toolbar {
-  background-color: #202020;
-  z-index: 2;
-  box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
-}
+//   & > mat-toolbar {
+//     height: 60px;
+//   }
+// }
+// mat-toolbar {
+//   background-color: #222;
+//   box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
+// }
+// mat-icon {
+//   color: rgb(255, 255, 255);
+//   font-size: 28px;
+// }
 
-mat-sidenav-content {
-  overflow-y: scroll;
-}
-.logo {
-  height: 50px;
-  padding-left: 10%;
-}
-.nav {
-  padding-right: 5%;
-}
-a.nav-link {
-  background-color: #303030;
-  color: white;
-  font-size: 16px;
-}
-a.nav-link:hover {
-  color: white;
-  background-color: #474747;
+// .logo {
+//   height: 50px;
+//   padding-left: 5%;
+// }
+// a {
+//   text-decoration: none;
+//   color: white;
+// }
+// a::after {
+//   content: "";
+//   display: block;
+//   width: 0;
+//   height: 2px;
+//   background-color: #ffff;
+//   transition: width 0.3s;
+// }
+// a:hover::after {
+//   width: 100%;
+//   transition: width 0.3s;
+// }
+// .menu li {
+//   display: inline-block;
+//   margin-left: 24px;
+//   padding-right: 20px;
+// }
+*,
+h3 {
+  font-family: "Kanit", sans-serif !important;
 }

@@ -1,0 +1,29 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.logo {
+  height: 50px;
+}
+mat-toolbar {
+  background-color: rgb(36, 36, 36);
+}
+*,
+.mat-h3,
+.mat-subheading-2,
+.mat-typography h3 {
+  font-family: "Kanit", sans-serif !important;
+}

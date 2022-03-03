@@ -1,5 +1,62 @@
-<h3 class="mt-3">รายงานสถานการณ์ โควิด-19 รายวัน</h3>
-<div *ngFor="let item of data?.results">
-  <h4>{{ item.new_recovered }}</h4>
+<p class="header-title mt-3">รายงานสถานการณ์ โควิด-19 รายวัน</p>
+
+<div class="container">
+  <div *ngIf="data; else loading">
+    <div class="date-covid mt-3 d-flex align-items-center justify-content-end">
+      <p style="margin: 0; margin-right: 12px">วันที่ต้องการดูข้อมูล :</p>
+      <input
+        type="date"
+        (change)="onDateChange($event)"
+        [value]="selectedDateCovidCases?.txn_date"
+      />
+    </div>
+    <div class="mt-3">
+      <p>อัพเดตล่าสุด : {{ selectedDateCovidCases?.update_date }}</p>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <div class="alert alert-danger">
+          <p>จำนวนผู้ป่วยรายใหม่</p>
+          <p>{{ selectedDateCovidCases?.new_case }} คน</p>
+          <span>สะสม {{ selectedDateCovidCases?.total_case }}</span>
+        </div>
+      </div>
+
+      <div id="chart" *ngIf="timelineCasesAll">
+        <app-covid-line-chart
+          [option]="chartNewCasesCovidOptions"
+        ></app-covid-line-chart>
+      </div>
+      <div class="col">
+        <div class="alert alert-dark">
+          <p>จำนวนเสียชีวิต</p>
+          <p>{{ selectedDateCovidCases?.new_death }} คน</p>
+          <span>สะสม {{ selectedDateCovidCases?.total_death }}</span>
+        </div>
+      </div>
+      <div id="chart" *ngIf="timelineCasesAll">
+        <app-covid-line-chart
+          [option]="chartNewDeathCovidOptions"
+        ></app-covid-line-chart>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-success">
+          <p>จำนวนผู้ป่วยรักษาหาย</p>
+          <p>{{ selectedDateCovidCases?.new_recovered }} คน</p>
+          <span>สะสม {{ selectedDateCovidCases?.total_recovered }}</span>
+        </div>
+      </div>
+      <div id="chart" *ngIf="timelineCasesAll">
+        <app-covid-line-chart
+          [option]="chartRecoverdCovidOptions"
+        ></app-covid-line-chart>
+      </div>
+    </div>
+  </div>
 </div>
-<router-outlet></router-outlet>
+<ng-template #loading>
+  <div class="spinner-border text-dark mt-3" role="status"></div>
+  <span class="sr-only">Loading...</span>
+</ng-template>
