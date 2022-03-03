@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Covid, List } from 'src/app/models/covid';
+import { CovidProvince, List } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 import { provinces } from 'src/app/models/province';
 
@@ -10,11 +10,11 @@ import { provinces } from 'src/app/models/province';
   styleUrls: ['./covid-list-page.component.scss'],
 })
 export class CovidListPageComponent implements OnInit {
-  @Input() data: List<Covid> | null = null;
+  @Input() data: List<CovidProvince> | null = null;
 
   selectedProvinceName!: String;
   provinces: Array<String> = provinces;
-  data$!: Observable<List<Covid>>;
+  data$!: Observable<List<CovidProvince>>;
 
   constructor(private readonly service: CovidService) {}
 
@@ -30,7 +30,7 @@ export class CovidListPageComponent implements OnInit {
     );
   }
 
-  filterResultByProvince(data: List<Covid>): List<Covid> {
+  filterResultByProvince(data: List<CovidProvince>): List<CovidProvince> {
     data.results = data.results.filter(
       (result) => result.province == this.selectedProvinceName
     );

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
-import { Covid, List } from 'src/app/models/covid';
+import { CovidProvince, List } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 
 @Component({
@@ -10,12 +9,9 @@ import { CovidService } from '../covid.service';
   styleUrls: ['./covid-list.component.scss'],
 })
 export class CovidListComponent implements OnInit {
-  @Input() data: List<Covid> | null = null;
+  @Input() data: List<CovidProvince> | null = null;
 
-  constructor(
-    private readonly fb: FormBuilder,
-    private readonly service: CovidService
-  ) {}
+  constructor(private readonly service: CovidService) {}
 
   ngOnInit(): void {}
 }

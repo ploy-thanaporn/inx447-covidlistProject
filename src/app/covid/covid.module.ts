@@ -16,9 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CovidListComponent } from './covid-list/covid-list.component';
 import { CovidListPageComponent } from './covid-list-page/covid-list-page.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CovidDayComponent } from './covid-day/covid-day.component';
 
 @NgModule({
-  declarations: [CovidListComponent, CovidListPageComponent],
+  declarations: [CovidListComponent, CovidListPageComponent, CovidDayComponent],
   imports: [
     CommonModule,
     CovidRoutingModule,
