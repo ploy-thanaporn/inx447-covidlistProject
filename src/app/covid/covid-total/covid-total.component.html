@@ -23,8 +23,8 @@
 </div>
 
 <div *ngIf="news; else loading">
-  <div *ngFor="let item of news.results">
-
+  <div *ngFor="let item of news.articles">
+    {{item.title}}
   </div>
 </div>
 

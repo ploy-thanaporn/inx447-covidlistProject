@@ -52,13 +52,14 @@ export type CovidTimelineCasesAll = {
   results: Array<CovidAll>;
 };
 
+//News PART
 export type Source = {
   id: string,
   name: string,
 }
 
 export type Articles = {
-  source: Array<Source>,
+  source: Source,
   author: string,
   title: string,
   description: string,
@@ -105,9 +106,23 @@ export function parseTimeLineCasesAll(data: any): CovidTimelineCasesAll {
   };
 }
 
-export function parseNewsList(data:any): List<CovidNews> {
-  console.log(data)
+//News PART
+export function parseSource(data:any): Source{
   return {
-    results: data,
+    ...data,
+  }
+}
+
+export function parseArticle(data:any): Articles{
+  return {
+    ...data,
+    source: parseSource(data?.source || []),
+  }
+}
+
+export function parseNews(data:any): CovidNews{
+  return {
+    ...data,
+    articles: (data?.articles || []).map((data:any) => parseArticle(data))
   }
 }

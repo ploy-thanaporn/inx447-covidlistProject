@@ -9,7 +9,7 @@ import { CovidDay, CovidNews, List } from 'src/app/models/covid';
 
 export class CovidTotalComponent implements OnInit {
   @Input() data: List<CovidDay> | null = null;
-  @Input() news: List<CovidNews> | null = null;
+  @Input() news: CovidNews | null = null;
 
   constructor() { }
 

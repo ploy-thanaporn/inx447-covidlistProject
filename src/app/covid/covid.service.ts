@@ -10,7 +10,7 @@ import {
   parseProvinceList,
   CovidTimelineCasesAll,
   CovidNews,
-  parseNewsList,
+  parseNews,
 } from '../models/covid';
 
 const urlAllProvinces = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
@@ -45,10 +45,10 @@ export class CovidService {
       .pipe(map((data) => parseTimeLineCasesAll(data)));
   }
 
-  getAllNews(): Observable<List<CovidNews>> {
+  getAllNews(): Observable<CovidNews> {
     return this.http
       .get(urlNews)
-      .pipe(map((data) => parseNewsList(data)));
+      .pipe(map((data) => parseNews(data)));
   }
-  
+
 }

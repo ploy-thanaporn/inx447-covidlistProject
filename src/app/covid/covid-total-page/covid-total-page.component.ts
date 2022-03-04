@@ -10,10 +10,9 @@ import { CovidService } from '../covid.service';
 })
 export class CovidTotalPageComponent implements OnInit {
   @Input() data: List<CovidDay> | null = null;
-  @Input() news: List<CovidNews> | null = null;
 
   data$!: Observable<List<CovidDay>>;
-  news$!: Observable<List<CovidNews>>;
+  news$!: Observable<CovidNews>;
 
   constructor(
     private readonly service: CovidService,
