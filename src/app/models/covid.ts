@@ -52,6 +52,7 @@ export type CovidTimelineCasesAll = {
   results: Array<CovidAll>;
 };
 
+//News PART
 export type Source = {
   id: string | null;
   name: string;
