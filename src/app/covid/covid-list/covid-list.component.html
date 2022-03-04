@@ -2,21 +2,18 @@
   <div *ngIf="data; else loading">
     <div *ngFor="let item of data.results">
       <div class="date-covid mt-3 d-flex justify-content-end">
-        <p>วันที่ต้องการดูข้อมูล : {{ item.txn_date }}</p>
-      </div>
-      <div class="mt-3">
-        <p>อัพเดตล่าสุด : {{ item.update_date }}</p>
+        <h2>อัพเดตล่าสุด : {{ item.update_date }}</h2>
       </div>
       <div class="row mt-2">
         <div class="col">
           <div class="alert alert-danger">
-            <p>จำนวนผู้ป่วยรายใหม่</p>
+            <h1>จำนวนผู้ป่วยรายใหม่</h1>
             <p>{{ item.new_case.toLocaleString() }} คน</p>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-dark">
-            <p>จำนวนเสียชีวิต</p>
+            <h1>จำนวนเสียชีวิต</h1>
             <p>{{ item.new_death.toLocaleString() }} คน</p>
             <span>สะสม {{ item.total_death.toLocaleString() }} คน</span>
           </div>
@@ -25,13 +22,13 @@
       <div class="row">
         <div class="col">
           <div class="alert alert-info">
-            <p>จำนวนผู้ป่วยสะสม</p>
+            <h1>จำนวนผู้ป่วยสะสม</h1>
             <p>{{ item.total_case.toLocaleString() }} คน</p>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-success">
-            <p>จำนวนผู้ป่วยรักษาหาย</p>
+            <h1>จำนวนผู้ป่วยรักษาหาย</h1>
             <p>{{ item.new_death.toLocaleString() }} คน</p>
           </div>
         </div>
