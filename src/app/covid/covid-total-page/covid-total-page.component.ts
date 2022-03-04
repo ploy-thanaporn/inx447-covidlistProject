@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CovidDay, List } from 'src/app/models/covid';
+import { CovidDay, CovidNews, List } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 
 @Component({
@@ -10,8 +10,10 @@ import { CovidService } from '../covid.service';
 })
 export class CovidTotalPageComponent implements OnInit {
   @Input() data: List<CovidDay> | null = null;
+  @Input() news: List<CovidNews> | null = null;
 
   data$!: Observable<List<CovidDay>>;
+  news$!: Observable<List<CovidNews>>;
 
   constructor(
     private readonly service: CovidService,
@@ -19,6 +21,7 @@ export class CovidTotalPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.data$ = this.service.getAllDay();
+    this.news$ = this.service.getAllNews();
   }
 
 }

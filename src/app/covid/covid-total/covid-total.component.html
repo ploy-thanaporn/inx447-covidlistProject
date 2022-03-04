@@ -1,5 +1,5 @@
 <div *ngIf="data; else loading ">
-  <div class="main-container" *ngFor="let file of data.results">
+  <div class="static-main-container" *ngFor="let file of data.results">
     <div class="normal-text-container">
       <h1>ตัวเลขผู้ติดเชื้อ</h1>
       <label>โควิด-19</label>
@@ -19,6 +19,12 @@
         <code>{{ (file.total_death).toLocaleString() }}</code>
       </div>
     </div>
+  </div>
+</div>
+
+<div *ngIf="news; else loading">
+  <div *ngFor="let item of news.results">
+
   </div>
 </div>
 
