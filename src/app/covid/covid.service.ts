@@ -13,6 +13,7 @@ import {
   parseNewsList,
   Articles,
 } from '../models/covid';
+import { VaccinationFormData } from './vaccine-form/vaccine-form.component';
 
 const urlAllProvinces =
   'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
@@ -23,6 +24,11 @@ const urlAll = 'https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all';
 
 const urlNews =
   'https://newsapi.org/v2/everything?q=โควิด&apiKey=14d38d8d7fed4e52ac551060f40bbd16';
+
+const urlVaccinationAll =
+  'https://guarded-ridge-75359.herokuapp.com/api/vaccination';
+const urlVaccinationCreate =
+  'https://guarded-ridge-75359.herokuapp.com/api/vaccination';
 
 @Injectable({
   providedIn: 'root',
@@ -50,5 +56,9 @@ export class CovidService {
 
   getAllNews(): Observable<Array<Articles>> {
     return this.http.get(urlNews).pipe(map((data) => parseNewsList(data)));
+  }
+
+  createVaccination(data: VaccinationFormData): Observable<any> {
+    return this.http.post(urlVaccinationCreate, data);
   }
 }

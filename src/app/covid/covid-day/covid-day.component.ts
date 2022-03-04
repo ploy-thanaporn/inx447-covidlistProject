@@ -57,7 +57,7 @@ export class CovidDayComponent implements OnInit {
         ],
         titleText: 'จำนวนผู้ติดเชื้อสะสม',
         categories: this.timelineCasesAll!.chartNewCases.categories,
-        colors: ['#ff8c8c'],
+        colors: ['#f54d4d'],
       };
 
       this.chartNewDeathCovidOptions = {
@@ -69,7 +69,7 @@ export class CovidDayComponent implements OnInit {
         ],
         titleText: 'จำนวนผู้เสียชีวิตสะสม',
         categories: this.timelineCasesAll!.chartNewDeath.categories,
-        colors: ['#868686'],
+        colors: ['#808080'],
       };
 
       this.chartRecoverdCovidOptions = {
@@ -81,7 +81,7 @@ export class CovidDayComponent implements OnInit {
         ],
         titleText: 'จำนวนผู้รักษาหายสะสม',
         categories: this.timelineCasesAll!.chartRecovered.categories,
-        colors: ['#8ee08b'],
+        colors: ['#22b145'],
       };
     }
   }
