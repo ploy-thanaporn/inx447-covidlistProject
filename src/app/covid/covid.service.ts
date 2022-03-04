@@ -11,15 +11,18 @@ import {
   CovidTimelineCasesAll,
   CovidNews,
   parseNewsList,
+  Articles,
 } from '../models/covid';
 
-const urlAllProvinces = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
+const urlAllProvinces =
+  'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
 
 const urlAllDay = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-all';
 
 const urlAll = 'https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all';
 
-const urlNews = 'https://newsapi.org/v2/everything?q=โควิด&apiKey=14d38d8d7fed4e52ac551060f40bbd16';
+const urlNews =
+  'https://newsapi.org/v2/everything?q=โควิด&apiKey=14d38d8d7fed4e52ac551060f40bbd16';
 
 @Injectable({
   providedIn: 'root',
@@ -45,10 +48,7 @@ export class CovidService {
       .pipe(map((data) => parseTimeLineCasesAll(data)));
   }
 
-  getAllNews(): Observable<List<CovidNews>> {
-    return this.http
-      .get(urlNews)
-      .pipe(map((data) => parseNewsList(data)));
+  getAllNews(): Observable<Array<Articles>> {
+    return this.http.get(urlNews).pipe(map((data) => parseNewsList(data)));
   }
-  
 }

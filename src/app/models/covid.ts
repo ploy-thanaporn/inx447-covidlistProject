@@ -53,26 +53,26 @@ export type CovidTimelineCasesAll = {
 };
 
 export type Source = {
-  id: string,
-  name: string,
-}
+  id: string | null;
+  name: string;
+};
 
 export type Articles = {
-  source: Array<Source>,
-  author: string,
-  title: string,
-  description: string,
-  url: string,
-  urlToImage: string,
-  publishedAt: string,
-  content: string,
-}
+  source: Array<Source>;
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content: string;
+};
 
 export type CovidNews = {
-  status: string,
-  totalResults: number,
-  articles: Array<Articles>,
-}
+  status: string;
+  totalResults: number;
+  articles: Array<Articles>;
+};
 
 //covid
 export function parseProvinceList(data: any): List<CovidProvince> {
@@ -105,9 +105,6 @@ export function parseTimeLineCasesAll(data: any): CovidTimelineCasesAll {
   };
 }
 
-export function parseNewsList(data:any): List<CovidNews> {
-  console.log(data)
-  return {
-    results: data,
-  }
+export function parseNewsList(data: any): Array<Articles> {
+  return data.articles;
 }

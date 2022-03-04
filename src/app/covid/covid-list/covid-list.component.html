@@ -11,14 +11,14 @@
         <div class="col">
           <div class="alert alert-danger">
             <p>จำนวนผู้ป่วยรายใหม่</p>
-            <p>{{ item.new_case }} คน</p>
+            <p>{{ item.new_case.toLocaleString() }} คน</p>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-dark">
             <p>จำนวนเสียชีวิต</p>
-            <p>{{ item.new_death }} คน</p>
-            <span>สะสม {{ item.total_death }} คน</span>
+            <p>{{ item.new_death.toLocaleString() }} คน</p>
+            <span>สะสม {{ item.total_death.toLocaleString() }} คน</span>
           </div>
         </div>
       </div>
@@ -26,13 +26,13 @@
         <div class="col">
           <div class="alert alert-info">
             <p>จำนวนผู้ป่วยสะสม</p>
-            <p>{{ item.total_case }} คน</p>
+            <p>{{ item.total_case.toLocaleString() }} คน</p>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-success">
             <p>จำนวนผู้ป่วยรักษาหาย</p>
-            <p>{{ item.new_death }} คน</p>
+            <p>{{ item.new_death.toLocaleString() }} คน</p>
           </div>
         </div>
       </div>

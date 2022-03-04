@@ -1,4 +1,4 @@
-<div *ngIf="data; else loading ">
+<div *ngIf="data; else loading">
   <div class="static-main-container" *ngFor="let file of data.results">
     <div class="normal-text-container">
       <h1>ตัวเลขผู้ติดเชื้อ</h1>
@@ -8,23 +8,24 @@
     <div class="static-container">
       <div class="Infected-box">
         <label>ยอดผู้ติดเชื้อสะสม</label>
-        <code>{{ (file.total_case).toLocaleString() }}</code>
+        <code>{{ file.total_case.toLocaleString() }}</code>
       </div>
       <div class="revoered-box">
         <label>ยอดผู้ที่รักษาหายสะสม</label>
-        <code>{{ (file.total_recovered).toLocaleString() }}</code>
+        <code>{{ file.total_recovered.toLocaleString() }}</code>
       </div>
       <div class="death-box">
         <label>ยอดผู้เสียชีวิตสะสม</label>
-        <code>{{ (file.total_death).toLocaleString() }}</code>
+        <code>{{ file.total_death.toLocaleString() }}</code>
       </div>
     </div>
   </div>
 </div>
 
 <div *ngIf="news; else loading">
-  <div *ngFor="let item of news.results">
-
+  <div *ngFor="let item of news">
+    <p>{{ item.title }}</p>
+    <!-- {{ item.totalResults }} -->
   </div>
 </div>
 

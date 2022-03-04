@@ -9,14 +9,11 @@ import { CovidService } from '../covid.service';
   styleUrls: ['./covid-day-page.component.scss'],
 })
 export class CovidDayPageComponent implements OnInit {
-  data$!: Observable<List<CovidDay>>;
   timelineCasesAll$!: Observable<CovidTimelineCasesAll>;
 
   constructor(private readonly service: CovidService) {}
 
   ngOnInit(): void {
-    this.data$ = this.service.getAllDay();
-
     this.timelineCasesAll$ = this.service.timelineCasesAll();
   }
 }

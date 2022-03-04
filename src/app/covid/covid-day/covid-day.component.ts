@@ -39,7 +39,8 @@ export class CovidDayComponent implements OnInit {
 
   public selectedDateCovidCases: CovidAll | null = null;
 
-  @Input() data: List<CovidDay> | null = null;
+  public now: Date = new Date();
+
   @Input() timelineCasesAll: CovidTimelineCasesAll | null = null;
 
   constructor(private readonly service: CovidService) {}
