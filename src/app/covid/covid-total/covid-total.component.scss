@@ -1,0 +1,55 @@
+.main-container{
+  padding: 30px;
+  display: flex;
+
+  &>.normal-text-container{
+    width: fit-content;
+    text-align: center;
+
+    &>h1{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 3em;
+
+    }
+    &>label{
+      font-size: 6em;
+      color: red;
+
+    }
+  }
+
+  &>.static-container{
+    border: 1px solid black; /* เอาไว้เช็คพื้นที่ว่ากว้างขนาดไหน */
+    margin-left: 40px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    grid-template-areas:
+    'a a'
+    'b c';
+
+    &>.Infected-box,.revoered-box,.death-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      &>label{
+        font-size: 1.7em;
+      }
+      &>code{
+        font-size: 2.0em;
+      }
+    }
+
+    &>.Infected-box{
+      grid-area: a;
+    }
+    &>.revoered-box{
+      grid-area: b;
+    }
+    &>.death-box{
+      grid-area: c;
+    }
+
+  }
+}

@@ -1,0 +1,28 @@
+<div *ngIf="data; else loading ">
+  <div class="main-container" *ngFor="let file of data.results">
+    <div class="normal-text-container">
+      <h1>ตัวเลขผู้ติดเชื้อ</h1>
+      <label>โควิด-19</label>
+      <h1>ทั้งหมดในประเทศไทย</h1>
+    </div>
+    <div class="static-container">
+      <div class="Infected-box">
+        <label>ยอดผู้ติดเชื้อสะสม</label>
+        <code>{{ (file.total_case).toLocaleString() }}</code>
+      </div>
+      <div class="revoered-box">
+        <label>ยอดผู้ที่รักษาหายสะสม</label>
+        <code>{{ (file.total_recovered).toLocaleString() }}</code>
+      </div>
+      <div class="death-box">
+        <label>ยอดผู้เสียชีวิตสะสม</label>
+        <code>{{ (file.total_death).toLocaleString() }}</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-border text-dark mt-3" role="status"></div>
+  <span class="sr-only">Loading...</span>
+</ng-template>

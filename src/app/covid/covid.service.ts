@@ -11,8 +11,7 @@ import {
   CovidTimelineCasesAll,
 } from '../models/covid';
 
-const urlAllProvinces =
-  'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
+const urlAllProvinces = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
 
 const urlAllDay = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-all';
 
