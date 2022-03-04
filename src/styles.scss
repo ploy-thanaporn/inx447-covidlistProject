@@ -2,6 +2,12 @@
 
 @include mat.core();
 
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+  $font-family: 'Raleway'
+);
+@include mat-core($custom-typography);
+
 $my-ng3-primary: mat.define-palette(mat.$indigo-palette);
 $my-ng3-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
@@ -23,7 +29,7 @@ body {
   margin: 0;
 }
 * {
-  font-family: "Kanit", sans-serif;
+  font-family: 'Kanit', sans-serif !important;
 }
 
 .header-title {
