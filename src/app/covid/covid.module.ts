@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { CovidTotalComponent } from './covid-total/covid-total.component';
 import { CovidTotalPageComponent } from './covid-total-page/covid-total-page.component';
+import { VaccineFormComponent } from './vaccine-form/vaccine-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CovidTotalPageComponent } from './covid-total-page/covid-total-page.com
     CovidLineChartComponent,
     CovidTotalComponent,
     CovidTotalPageComponent,
+    VaccineFormComponent,
   ],
   imports: [
     CommonModule,
