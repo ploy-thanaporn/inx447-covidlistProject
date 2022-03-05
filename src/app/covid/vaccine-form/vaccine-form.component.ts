@@ -18,7 +18,9 @@ export type VaccinationFormData = {
 })
 export class VaccineFormComponent implements OnInit {
   @Input() data!: VaccinationFormData;
+
   formGroup!: FormGroup;
+  
   constructor(
     private readonly fb: FormBuilder,
     private readonly service: CovidService

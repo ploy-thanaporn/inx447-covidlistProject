@@ -13,6 +13,7 @@ import {
   parseNewsList,
   Articles,
 } from '../models/covid';
+import { parseVaccine, Vaccination } from '../models/vaccination';
 import { VaccinationFormData } from './vaccine-form/vaccine-form.component';
 
 const urlAllProvinces =
@@ -27,6 +28,7 @@ const urlNews =
 
 const urlVaccinationAll =
   'https://guarded-ridge-75359.herokuapp.com/api/vaccination';
+
 const urlVaccinationCreate =
   'https://guarded-ridge-75359.herokuapp.com/api/vaccination';
 
@@ -61,6 +63,13 @@ export class CovidService {
   }
 
   createVaccination(data: VaccinationFormData): Observable<any> {
+    console.log(data)
     return this.http.post(urlVaccinationCreate, data);
+  }
+
+  getVaccine(): Observable<List<Vaccination>> {
+    return this.http
+      .get(urlVaccinationCreate)
+      .pipe(map((data) => parseVaccine(data)))
   }
 }

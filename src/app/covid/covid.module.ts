@@ -23,6 +23,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { CovidTotalComponent } from './covid-total/covid-total.component';
 import { CovidTotalPageComponent } from './covid-total-page/covid-total-page.component';
 import { VaccineFormComponent } from './vaccine-form/vaccine-form.component';
+import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
+import { VaccineListPageComponent } from './vaccine-list-page/vaccine-list-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { VaccineFormComponent } from './vaccine-form/vaccine-form.component';
     CovidTotalComponent,
     CovidTotalPageComponent,
     VaccineFormComponent,
+    VaccineListComponent,
+    VaccineListPageComponent,
   ],
   imports: [
     CommonModule,

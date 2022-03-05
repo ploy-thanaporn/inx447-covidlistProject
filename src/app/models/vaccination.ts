@@ -1,3 +1,7 @@
+export type List<T> = {
+  results: T[];
+};
+
 export type Vaccination = {
   firstName: string;
   lastName: string;
@@ -6,3 +10,10 @@ export type Vaccination = {
   dose: number;
   date: Date;
 };
+
+export function parseVaccine(data:any): List<Vaccination>{
+  console.log(data)
+  return {
+    results: data,
+  }
+}
