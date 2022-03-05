@@ -49,6 +49,8 @@ export class CovidService {
   }
 
   getAllNews(): Observable<Array<Articles>> {
-    return this.http.get(urlNews).pipe(map((data) => parseNewsList(data)));
+    return this.http
+      .get(urlNews)
+      .pipe(map((data) => parseNewsList(data)));
   }
 }

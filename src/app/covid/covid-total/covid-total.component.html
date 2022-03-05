@@ -23,9 +23,17 @@
 </div>
 
 <div *ngIf="news; else loading">
-  <div *ngFor="let item of news">
-    <p>{{ item.title }}</p>
-    <!-- {{ item.totalResults }} -->
+  <div class="news-topic">
+    <b>ข่าวสารเกี่ยวกับโควิด19</b>
+  </div>
+  <div class="main-container">
+    <div *ngFor="let item of news" class="news-main-continer">
+      <img src="{{ item.urlToImage }}" alt="{{ item.title }}">
+      <div class="news-details">
+        <h2>{{ item.title }}</h2>
+        <label>{{ item.description }} <a href="{{ item.url }}" target="_blank">อ่านข่าวนี้ต่อ Click</a></label>
+      </div>
+    </div>
   </div>
 </div>
 
