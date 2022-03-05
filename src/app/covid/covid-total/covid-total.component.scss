@@ -94,20 +94,26 @@
       opacity: 1;
     }
     &>.news-details{
-      width: 608px;
-      margin: 10px;
+      width: 628px;
       visibility: hidden;
+      padding-bottom: 20px;
       background-color: #fff;
+
+      &>label{
+        &>a{
+          text-decoration: none;
+        }
+      }
     }
   }
   &>.news-main-continer:hover{
     &>.news-details{
       position: absolute;
-      margin-top: -108px;
+      margin-top: -128px;
       background-color: #fff;
-      padding: 1em 10px 1em 0px;
+      padding: 1em 20px 2em 20px;
       visibility: visible;
-      transition: visibility 0.25s ease-in 0.25s, opacity 300ms;
+      transition: visibility 0.1s ease-in 0.1s, opacity 300ms;
     }
   }
 }
