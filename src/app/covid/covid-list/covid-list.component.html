@@ -7,29 +7,33 @@
       <div class="row mt-2">
         <div class="col">
           <div class="alert alert-danger">
-            <h1>จำนวนผู้ป่วยรายใหม่</h1>
-            <p>{{ item.new_case.toLocaleString() }} คน</p>
+            <p class="head-detail">จำนวนผู้ป่วยรายใหม่</p>
+            <p class="info-detail">{{ item.new_case.toLocaleString() }} คน</p>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-dark">
-            <h1>จำนวนเสียชีวิต</h1>
-            <p>{{ item.new_death.toLocaleString() }} คน</p>
-            <span>สะสม {{ item.total_death.toLocaleString() }} คน</span>
+            <p class="head-detail">จำนวนเสียชีวิต</p>
+            <div class="info-death">
+              <p>{{ item.new_death.toLocaleString() }} คน</p>
+              <span>สะสม {{ item.total_death.toLocaleString() }} คน</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="alert alert-info">
-            <h1>จำนวนผู้ป่วยสะสม</h1>
-            <p>{{ item.total_case.toLocaleString() }} คน</p>
+            <p class="head-detail">จำนวนผู้ป่วยสะสม</p>
+            <div class="info-detail">
+              <p>{{ item.total_case.toLocaleString() }} คน</p>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="alert alert-success">
-            <h1>จำนวนผู้ป่วยรักษาหาย</h1>
-            <p>{{ item.new_death.toLocaleString() }} คน</p>
+            <p class="head-detail">จำนวนผู้ป่วยรักษาหาย</p>
+            <p class="info-detail">{{ item.new_death.toLocaleString() }} คน</p>
           </div>
         </div>
       </div>

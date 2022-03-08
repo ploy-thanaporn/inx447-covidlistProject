@@ -57,19 +57,16 @@ export class CovidService {
   }
 
   getAllNews(): Observable<Array<Articles>> {
-    return this.http
-      .get(urlNews)
-      .pipe(map((data) => parseNewsList(data)));
+    return this.http.get(urlNews).pipe(map((data) => parseNewsList(data)));
   }
 
   createVaccination(data: VaccinationFormData): Observable<any> {
-    console.log(data)
     return this.http.post(urlVaccinationCreate, data);
   }
 
   getVaccine(): Observable<List<Vaccination>> {
     return this.http
       .get(urlVaccinationCreate)
-      .pipe(map((data) => parseVaccine(data)))
+      .pipe(map((data) => parseVaccine(data)));
   }
 }

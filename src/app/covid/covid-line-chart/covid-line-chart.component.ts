@@ -46,8 +46,8 @@ export class CovidLineChartComponent implements OnInit {
       series: this.option?.series,
       chart: {
         fontFamily: 'Kanit',
-        width: 500,
-        height: 300,
+        width: '100%',
+        height: 200,
         type: 'line',
         zoom: {
           enabled: false,
