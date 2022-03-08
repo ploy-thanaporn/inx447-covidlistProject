@@ -1,14 +1,9 @@
-.main-container{
+table,th,td,tr{
+  border: 1px black solid;
+  text-align: center;
+}
 
-  &>.person{
-    padding-top: 30px;
-
-    &>p{
-
-      &>span{
-        padding-left: 10px;
-      }
-    }
-  }
+table{
+  margin-top: 30px;
 }
 

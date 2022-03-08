@@ -1,28 +1,24 @@
 <div *ngIf="data; else loading">
-  <div *ngFor="let item of data.results" class="main-container">
-    <div class="person">
-      <p>
-        <b>ชื่อ - นามสกุล</b>
-        <span>{{ item.firstName }} {{ item.lastName }}</span>
-      </p>
-      <p>
-        <b>วัน/เดือน/ปี เกิด</b>
-        <span>{{ item.birthdate }}</span>
-      </p>
-      <p>
-        <b>ชนิดวัคซีนที่ฉีด</b>
-        <span>{{ item.vaccineName }}</span>
-      </p>
-      <p>
-        <b>จำนวนโดส</b>
-        <span>{{ item.dose }}</span> โดส
-      </p>
-      <p>
-        <b>ฉีดวันที่</b>
-        <span>{{ item.date }}</span>
-      </p>
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ชื่อ-นามสกุล</th>
+        <th scope="col">วัน/เดือน/ปี เกิด</th>
+        <th scope="col">ชนิดวัคซีนที่ฉีด</th>
+        <th scope="col">จำนวนโดส</th>
+        <th scope="col">ฉีดวันที่</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of data.results">
+      <tr>
+        <td>{{ item.firstName }} {{ item.lastName }}</td>
+        <td>{{ item.birthdate }}</td>
+        <td>{{ item.vaccineName }}</td>
+        <td>{{ item.dose }}</td>
+        <td>{{ item.date }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <ng-template #loading>
