@@ -17,6 +17,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { NgbModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, NavMenuComponent],
@@ -33,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
     LayoutModule,
     MatButtonModule,
     MatListModule,
+    NgbModule,
+    NgbAlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

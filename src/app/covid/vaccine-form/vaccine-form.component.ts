@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CovidService } from '../covid.service';
+import { ToastService } from '../toast.service';
 
 export type VaccinationFormData = {
   firstName?: string;
@@ -20,10 +21,12 @@ export class VaccineFormComponent implements OnInit {
   @Input() data!: VaccinationFormData;
 
   formGroup!: FormGroup;
-  
+  isLoading: boolean = false;
+
   constructor(
     private readonly fb: FormBuilder,
-    private readonly service: CovidService
+    private readonly service: CovidService,
+    public readonly toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -38,10 +41,29 @@ export class VaccineFormComponent implements OnInit {
   }
 
   submit(): void {
+    this.isLoading = true;
+
     this.data = this.formGroup.value;
 
-    this.service
-      .createVaccination(this.data)
-      .subscribe((data) => console.log(data));
+    this.service.createVaccination(this.data).subscribe(
+      () => {
+        this.isLoading = false;
+
+        this.toastService.show(
+          'ส่งข้อมูลสำเร็จ',
+          'เราได้รัยข้อมูลของท่านแล้ว',
+          'bg-success'
+        );
+      },
+      (error) => {
+        this.isLoading = false;
+
+        this.toastService.show(
+          'ข้อมูลผิดพลาด',
+          'กรุณากรอกข้อมูลให้ครบถ้วน',
+          'bg-danger'
+        );
+      }
+    );
   }
 }

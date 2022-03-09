@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  CovidAll,
-  CovidDay,
-  CovidTimelineCasesAll,
-  List,
-} from 'src/app/models/covid';
+import { CovidAll, CovidTimelineCasesAll } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 import {
   ApexAxisChartSeries,

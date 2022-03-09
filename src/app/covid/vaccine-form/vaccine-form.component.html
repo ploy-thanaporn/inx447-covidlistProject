@@ -1,46 +1,65 @@
 <p class="header-title mt-3">ฟอร์มการฉีดวัคซีน</p>
-<div [formGroup]="formGroup" class="mt-3">
-  <div class="row">
-    <div class="col">
-      <mat-form-field appearance="outline" class="first-name">
-        <mat-label>ชื่อจริง</mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input type="text" matInput formControlName="firstName" required />
-      </mat-form-field>
-    </div>
-    <div class="col">
-      <mat-form-field appearance="outline" class="last-name">
-        <mat-label>นามสกุล</mat-label>
-        <mat-icon matPrefix>person</mat-icon>
-        <input type="text" matInput formControlName="lastName" required />
-      </mat-form-field>
-    </div>
+<div *ngIf="!isLoading; else loading">
+  <div class="container-toast">
+    <ngb-toast
+      *ngFor="let toast of toastService.toasts"
+      [class]="toast.classname"
+      [autohide]="true"
+      [delay]="toast.delay || 5000"
+      (hidden)="toastService.remove(toast)"
+      class="toast"
+    >
+      <p>{{ toast.header }} {{ toast.body }}</p>
+    </ngb-toast>
   </div>
-  <mat-form-field appearance="outline" class="form-input">
-    <mat-label> วันเกิด</mat-label>
-    <input type="date" matInput formControlName="birthdate" required />
-  </mat-form-field>
-  <mat-form-field appearance="outline" class="form-input">
-    <mat-label> ชื่อวัคซีน</mat-label>
-    <input type="text" matInput />
-    <mat-select formControlName="vaccineName" required>
-      <mat-option value="moderna">Moderna</mat-option>
-      <mat-option value="pfizer">Pfizer</mat-option>
-      <mat-option value="astrazeneca">Astrazeneca</mat-option>
-      <mat-option value="sinovac">Sinovac</mat-option>
-      <mat-option value="sinopharm">Sinoparm</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="outline" class="form-input">
-    <mat-label> วันที่ได้รับวัคซีน</mat-label>
-    <input type="date" matInput formControlName="date" required />
-  </mat-form-field>
-  <mat-form-field appearance="outline" class="form-input">
-    <mat-label> โดสที่</mat-label>
-    <input type="text" matInput formControlName="dose" required />
-  </mat-form-field>
 
-  <button mat-button (click)="submit()" class="mt-2">
-    <mat-icon>save</mat-icon> บันทึก
-  </button>
+  <div [formGroup]="formGroup" class="mt-3">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="first-name">
+          <mat-label>ชื่อจริง</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input type="text" matInput formControlName="firstName" required />
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="last-name">
+          <mat-label>นามสกุล</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input type="text" matInput formControlName="lastName" required />
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-form-field appearance="outline" class="form-input">
+      <mat-label> วันเกิด</mat-label>
+      <input type="date" matInput formControlName="birthdate" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-input">
+      <mat-label> ชื่อวัคซีน</mat-label>
+      <mat-select formControlName="vaccineName" required>
+        <mat-option value="moderna">Moderna</mat-option>
+        <mat-option value="pfizer">Pfizer</mat-option>
+        <mat-option value="astrazeneca">Astrazeneca</mat-option>
+        <mat-option value="sinovac">Sinovac</mat-option>
+        <mat-option value="sinopharm">Sinoparm</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-input">
+      <mat-label> วันที่ได้รับวัคซีน</mat-label>
+      <input type="date" matInput formControlName="date" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-input">
+      <mat-label> โดสที่</mat-label>
+      <input type="text" matInput formControlName="dose" required />
+    </mat-form-field>
+
+    <button mat-button (click)="submit()" class="mt-2">
+      <mat-icon>save</mat-icon> บันทึก
+    </button>
+  </div>
 </div>
+
+<ng-template #loading>
+  <div class="spinner-border text-dark mt-3" role="status"></div>
+  <span class="sr-only">กำลังส่งข้อมูล...</span>
+</ng-template>
