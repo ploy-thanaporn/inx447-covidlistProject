@@ -66,7 +66,7 @@ export class CovidService {
 
   getVaccine(): Observable<List<Vaccination>> {
     return this.http
-      .get(urlVaccinationCreate)
+      .get(urlVaccinationAll)
       .pipe(map((data) => parseVaccine(data)));
   }
 }
