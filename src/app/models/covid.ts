@@ -2,6 +2,7 @@ export type List<T> = {
   results: T[];
 };
 
+//ข้อมูลรายจังหวัดอัพเดตวันล่าสุด
 export type CovidProvince = {
   txn_date: Date;
   province: string;
@@ -14,6 +15,7 @@ export type CovidProvince = {
   update_date: Date;
 };
 
+//ข้อมูลวันที่อัพเดตล่าสุด
 export type CovidDay = {
   txn_date: Date;
   new_case: number;
@@ -27,6 +29,7 @@ export type CovidDay = {
   update_date: Date;
 };
 
+//ข้อมูลรายวันตั้งแต่ระลอกจนถึงปัจจุบัน
 export type CovidAll = {
   txn_date: string;
   new_case: number;
@@ -40,6 +43,7 @@ export type CovidAll = {
   update_date: string;
 };
 
+//graph
 export type Chart = {
   data: Array<number>;
   categories: Array<string>;
@@ -105,7 +109,7 @@ export function parseTimeLineCasesAll(data: any): CovidTimelineCasesAll {
     results: data,
   };
 }
-
+//news
 export function parseNewsList(data: any): Array<Articles> {
   return data.articles;
 }

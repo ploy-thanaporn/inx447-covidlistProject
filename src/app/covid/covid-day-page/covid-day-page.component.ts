@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CovidDay, CovidTimelineCasesAll, List } from 'src/app/models/covid';
+import { CovidTimelineCasesAll } from 'src/app/models/covid';
 import { CovidService } from '../covid.service';
 
 @Component({

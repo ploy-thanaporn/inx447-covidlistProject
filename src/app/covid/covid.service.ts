@@ -9,7 +9,6 @@ import {
   parseCovidDayList,
   parseProvinceList,
   CovidTimelineCasesAll,
-  CovidNews,
   parseNewsList,
   Articles,
 } from '../models/covid';

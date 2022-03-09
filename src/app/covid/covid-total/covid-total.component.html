@@ -28,10 +28,15 @@
   </div>
   <div class="main-container">
     <div *ngFor="let item of news" class="news-main-continer">
-      <img src="{{ item.urlToImage }}" alt="{{ item.title }}">
+      <img src="{{ item.urlToImage }}" alt="{{ item.title }}" />
       <div class="news-details">
         <h2>{{ item.title }}</h2>
-        <label>{{ item.description }} <a href="{{ item.url }}" target="_blank">อ่านข่าวนี้ต่อ Click</a></label>
+        <label
+          >{{ item.description }}
+          <a href="{{ item.url }}" target="_blank"
+            >อ่านข่าวนี้ต่อ Click</a
+          ></label
+        >
       </div>
     </div>
   </div>
@@ -39,5 +44,5 @@
 
 <ng-template #loading>
   <div class="spinner-border text-dark mt-3" role="status"></div>
-  <span class="sr-only">Loading...</span>
+  <span class="sr-only">กำลังดึงข้อมูล...</span>
 </ng-template>
