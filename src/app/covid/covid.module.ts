@@ -26,6 +26,7 @@ import { VaccineFormComponent } from './vaccine-form/vaccine-form.component';
 import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
 import { VaccineListPageComponent } from './vaccine-list-page/vaccine-list-page.component';
 
+import { NgbModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     CovidListComponent,
@@ -54,6 +55,8 @@ import { VaccineListPageComponent } from './vaccine-list-page/vaccine-list-page.
     MatButtonModule,
     MatNativeDateModule,
     NgApexchartsModule,
+    NgbAlertModule,
+    NgbModule,
   ],
 })
 export class CovidModule {}
