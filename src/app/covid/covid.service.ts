@@ -9,7 +9,6 @@ import {
   parseCovidDayList,
   parseProvinceList,
   CovidTimelineCasesAll,
-  CovidNews,
   parseNewsList,
   Articles,
 } from '../models/covid';
@@ -66,7 +65,7 @@ export class CovidService {
 
   getVaccine(): Observable<List<Vaccination>> {
     return this.http
-      .get(urlVaccinationCreate)
+      .get(urlVaccinationAll)
       .pipe(map((data) => parseVaccine(data)));
   }
 }
