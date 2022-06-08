@@ -11,9 +11,8 @@ export type Vaccination = {
   date: Date;
 };
 
-export function parseVaccine(data:any): List<Vaccination>{
-  console.log(data)
+export function parseVaccine(data: any): List<Vaccination> {
   return {
     results: data,
-  }
+  };
 }

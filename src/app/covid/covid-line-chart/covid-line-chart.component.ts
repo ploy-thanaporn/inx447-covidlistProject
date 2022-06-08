@@ -32,6 +32,7 @@ export type LineChartOptions = {
   styleUrls: ['./covid-line-chart.component.scss'],
 })
 export class CovidLineChartComponent implements OnInit {
+  //ค่าที่ต้องการเปลี่ยน
   @Input() option: LineChartOptions | null = null;
 
   public chartOption: Partial<ChartOptions> | any;
